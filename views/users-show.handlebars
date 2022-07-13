@@ -1,0 +1,17 @@
+<div class="text-center my-4">
+    <h1>{{this_user.username}}'s Profile</h1>
+</div>
+
+<div class="row mt-5">
+
+    <div class="col-sm-5" id="users-posts">
+        <h5 class="text-center">Orders</h5>
+        {{#each orders}}
+            <li class="list-group-item">
+                <div class="lead"><a href="/orders/{{this._id}}">{{this.food}}</a></div>
+                <div class="lead"><a href="/orders/{{this._id}}">{{this.drink}}</a></div>
+                <div class="lead"><a href="/orders/{{this._id}}">{{this.condiment}}</a></div>
+            </li>
+        {{/each}}
+    </div>
+</div>
