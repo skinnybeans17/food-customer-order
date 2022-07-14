@@ -14,7 +14,6 @@ module.exports = (app) => {
         };
     });
 
-    // NEW POST
     app.get('/orders/new', (req, res) => {
         if (req.user) {
             const currentUser = req.user;
@@ -33,7 +32,7 @@ module.exports = (app) => {
             order.author = userId;
 
             order.save().then(() => User.findById(userId)).then((user) => {
-                user.orders.unshift(post);
+                user.orders.unshift(order);
                 user.save();
                 return res.redirect(`/orders/${order._id}`);
             }).catch((err) => {
@@ -48,8 +47,8 @@ module.exports = (app) => {
     app.get('/orders/:id', (req, res) => {
         const currentUser = req.user;
         Order.findById(req.params.id).populate('comments').lean()
-        .then((post) => {
-            res.render('orders-show', { post, currentUser })
+        .then((order) => {
+            res.render('orders-show', { order, currentUser })
         })
         .catch((err) => {
             console.log(err.message);
