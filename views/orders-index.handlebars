@@ -3,9 +3,9 @@
     <ul class="list-group">
         {{#each orders}}
             <li class="list-group-item">
-                <div class="lead"><a href="/posts/{{this._id}}">{{this.food}}</a></div>
-                <div class="lead"><a href="/posts/{{this._id}}">{{this.drink}}</a></div>
-                <div class="lead"><a href="/posts/{{this._id}}">{{this.condiment}}</a></div>
+                <div class="lead"><a href="/orders/{{this._id}}">{{this.food}}</a></div>
+                <div class="lead"><a href="/orders/{{this._id}}">{{this.drink}}</a></div>
+                <div class="lead"><a href="/orders/{{this._id}}">{{this.condiment}}</a></div>
                 <div><small>{{this.author.username}}</small></div>
             </li>
         {{/each}}
