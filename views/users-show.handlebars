@@ -8,9 +8,9 @@
         <h5 class="text-center">Orders</h5>
         {{#each orders}}
             <li class="list-group-item">
-                <div class="lead"><a href="/orders/{{this._id}}">{{this.food}}</a></div>
-                <div class="lead"><a href="/orders/{{this._id}}">{{this.drink}}</a></div>
-                <div class="lead"><a href="/orders/{{this._id}}">{{this.condiment}}</a></div>
+                <div class="lead">Food: {{this.food}}</a></div>
+                <div class="lead">Drink: {{this.drink}}</a></div>
+                <div class="lead">Condiment: {{this.condiment}}</a></div>
             </li>
         {{/each}}
     </div>

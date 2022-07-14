@@ -20,7 +20,7 @@ const checkAuth = require('./middleware/checkAuth');
 app.use(checkAuth);
 
 const orders = require('./controllers/orders.js')(app);
-const users = require('./controllers/auth.js')(app);
+const users = require('./controllers/users.js')(app);
 const auth = require('./controllers/auth.js')(app);
 
 app.get('/', (req, res) => {
